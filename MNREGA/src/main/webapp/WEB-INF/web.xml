@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MNREGA</display-name>
+  <welcome-file-list>
+    <welcome-file>Welcome.html</welcome-file>
+
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AttendenceServlet</display-name>
+    <servlet-name>AttendenceServlet</servlet-name>
+    <servlet-class>controller.AttendenceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AttendenceServlet</servlet-name>
+    <url-pattern>/AttendenceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewAttendenceServlet</display-name>
+    <servlet-name>ViewAttendenceServlet</servlet-name>
+    <servlet-class>controller.ViewAttendenceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAttendenceServlet</servlet-name>
+    <url-pattern>/ViewAttendenceServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
