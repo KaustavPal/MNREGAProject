@@ -7,18 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bean.AddGPMBean;
+import util.MNREGAConnection;
 
 
 
 public class AddGPMDAO {
-	
-	public static Connection getMySQLConnection() throws ClassNotFoundException,SQLException
-	{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/mnrega","root","8100472356A");
-		return con1;
-		
-	}
 	Connection con;
 	PreparedStatement pst;
 	public boolean insertData(AddGPMBean ob)
@@ -27,7 +20,7 @@ public class AddGPMDAO {
 		try
 		{
 			
-				con = getMySQLConnection();
+				con = MNREGAConnection.getConnection();
 				pst = con.prepareStatement("insert into gpm values(?,?,?,?,?,?,?,?)");
 		
 				pst.setString(1, ob.getUserid());

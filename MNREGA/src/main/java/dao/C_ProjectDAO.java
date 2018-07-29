@@ -6,21 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bean.C_ProjectBean;
+import util.MNREGAConnection;
 
 public class C_ProjectDAO {
-	public static Connection getMySQLConnection()throws ClassNotFoundException,SQLException
-	{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/mnrega","root","8100472356A");
-		return con1;		
-	}
 	Connection con;
 	public boolean insertData(C_ProjectBean user)
 	{
 		boolean f= false;
 		try
 		{
-			 con = getMySQLConnection();
+			 con = MNREGAConnection.getConnection();
 			PreparedStatement pst= con.prepareStatement("insert into project values(?,?,?,?,?,?)");
 			
 			

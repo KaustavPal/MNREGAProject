@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import bean.C_ProjectBean;
+import util.MNREGAConnection;
 
 
 
@@ -25,8 +26,7 @@ public class ShowProjectGPMDAO {
 	
 	
 	public ShowProjectGPMDAO(String name) throws ClassNotFoundException, SQLException{
-		Class.forName(driver);
-		con=DriverManager.getConnection(url,user,pass);
+		con=MNREGAConnection.getConnection();
 		pstmtSelectProject=con.prepareStatement(sqlSelectProject);
 		pstmtSelectProject.setString(1, name);
 

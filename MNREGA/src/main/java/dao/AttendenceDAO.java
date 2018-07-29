@@ -7,15 +7,9 @@ import java.sql.SQLException;
 
 import bean.AttendenceBean;
 import bean.ERegBean;
+import util.MNREGAConnection;
 
 public class AttendenceDAO {
-	public static Connection getMySQLConnection() throws ClassNotFoundException,SQLException
-	{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/mnrega","root","8100472356A");
-		return con1;
-		
-	}
 	Connection con;
 	PreparedStatement pst;
 	public boolean insertData(AttendenceBean ob)
@@ -24,7 +18,7 @@ public class AttendenceDAO {
 		try
 		{
 			
-				con = getMySQLConnection();
+				con =MNREGAConnection.getConnection();
 				pst = con.prepareStatement("insert into attendence values(?,?)");
 		
 				pst.setString(1, ob.getUserid());
