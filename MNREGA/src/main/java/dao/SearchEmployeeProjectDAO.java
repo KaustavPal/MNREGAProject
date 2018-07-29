@@ -10,27 +10,14 @@ import java.util.Collection;
 
 import bean.C_ProjectBean;
 import bean.ERegBean;
+import util.MNREGAConnection;
 
 public class SearchEmployeeProjectDAO {
-	public static Connection getMySQLConnection() throws ClassNotFoundException,SQLException
-	{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/mnrega","root","8100472356A");
-		return con1;
-		
-	}
-	Connection con,con1;
+	Connection con;
 	PreparedStatement pst,pst1;
 	public Collection<ERegBean> getAllMembers(String name)throws SQLException
 	{
-		
-			
-				try {
-					con = getMySQLConnection();
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				con=MNREGAConnection.getConnection();
 				pst = con.prepareStatement("select userid,name,gender,dob,address,mobileno,pid from employee where pid=?");
 				pst.setString(1,name);
 				Collection<ERegBean>list= new ArrayList<ERegBean>();
@@ -48,7 +35,7 @@ public class SearchEmployeeProjectDAO {
 		
 			
 				try {
-					con1 = getMySQLConnection();
+					con1 = MNREGAConnection.getConnection();
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

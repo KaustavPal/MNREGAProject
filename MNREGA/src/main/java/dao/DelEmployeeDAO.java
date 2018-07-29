@@ -9,21 +9,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import bean.DelEmployeeBean;
+import util.MNREGAConnection;
 
 
 
 public class DelEmployeeDAO {
-	private String driver="com.mysql.jdbc.Driver";
-	private String url="jdbc:mysql://localhost:3306/mnrega";
-	private String user="root";
-	private String pass="8100472356A";
 	
 	private Connection con=null;
 	private String sqlSelectGPM="select userid,name from employee";
 	private PreparedStatement pstmtSelectGPM=null;
 	public DelEmployeeDAO() throws ClassNotFoundException, SQLException{
-		Class.forName(driver);
-		con=DriverManager.getConnection(url,user,pass);
+		con=MNREGAConnection.getConnection();
 		pstmtSelectGPM=con.prepareStatement(sqlSelectGPM);
 	}
 	

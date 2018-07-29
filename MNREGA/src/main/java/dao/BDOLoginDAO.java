@@ -7,16 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bean.BDOLoginBean;
+import util.MNREGAConnection;
 
 
 public class BDOLoginDAO {
-	public static Connection getMySQLConnection() throws ClassNotFoundException,SQLException
-	{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/mnrega","root","8100472356A");
-		return con1;
-		
-	}
 	Connection con;
 	PreparedStatement pst;
 	
@@ -24,7 +18,7 @@ public class BDOLoginDAO {
 	{
 		boolean f=false;  
 		try{ 
-		con = getMySQLConnection();
+		con = MNREGAConnection.getConnection();
 		pst=con.prepareStatement(  
 		"select userid,password from bdo where userid=? and password=?");  
 		pst.setString(1,uid);  

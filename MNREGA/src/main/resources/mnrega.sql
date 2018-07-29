@@ -25,9 +25,7 @@ DROP TABLE IF EXISTS `attendence`;
 CREATE TABLE `attendence` (
   `userid` varchar(20) DEFAULT NULL,
   `date` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
+) 
 --
 -- Dumping data for table `attendence`
 --
