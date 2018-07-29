@@ -47,7 +47,7 @@ CREATE TABLE `bdo` (
   `userid` varchar(10) DEFAULT NULL,
   `name` varchar(25) DEFAULT NULL,
   `password` varchar(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,7 +76,7 @@ CREATE TABLE `employee` (
   `mobileno` varchar(12) DEFAULT NULL,
   `pid` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +106,7 @@ CREATE TABLE `gpm` (
   `mobileno` varchar(12) DEFAULT NULL,
   `emailid` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +134,7 @@ CREATE TABLE `project` (
   `phead` varchar(10) DEFAULT NULL,
   `pgpm` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
