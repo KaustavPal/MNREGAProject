@@ -10,14 +10,14 @@ import java.util.Collection;
 
 import bean.C_ProjectBean;
 import bean.ERegBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 public class SearchEmployeeProjectDAO {
 	Connection con;
 	PreparedStatement pst,pst1;
 	public Collection<ERegBean> getAllMembers(String name)throws SQLException
 	{
-				con=MNREGAConnection.getConnection();
+				con=MNREGADataSource.getConnection();
 				pst = con.prepareStatement("select userid,name,gender,dob,address,mobileno,pid from employee where pid=?");
 				pst.setString(1,name);
 				Collection<ERegBean>list= new ArrayList<ERegBean>();

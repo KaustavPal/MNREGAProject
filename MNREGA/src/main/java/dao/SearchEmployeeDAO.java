@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import bean.ERegBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 public class SearchEmployeeDAO {
 	Connection con;
@@ -18,7 +18,7 @@ public class SearchEmployeeDAO {
 	{
 
 
-		con = MNREGAConnection.getConnection();
+		con = MNREGADataSource.getConnection();
 		pst = con.prepareStatement("select userid,name,gender,dob,address,mobileno,pid from employee where name=?");
 		pst.setString(1,name);
 		Collection<ERegBean>list= new ArrayList<ERegBean>();

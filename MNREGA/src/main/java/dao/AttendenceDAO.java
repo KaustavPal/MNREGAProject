@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import bean.AttendenceBean;
 import bean.ERegBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 public class AttendenceDAO {
 	Connection con;
@@ -18,7 +18,7 @@ public class AttendenceDAO {
 		try
 		{
 			
-				con =MNREGAConnection.getConnection();
+				con =MNREGADataSource.getConnection();
 				pst = con.prepareStatement("insert into attendence values(?,?)");
 		
 				pst.setString(1, ob.getUserid());
