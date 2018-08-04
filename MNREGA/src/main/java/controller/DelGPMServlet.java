@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bean.DelGPMBean;
 
@@ -22,7 +24,7 @@ import dao.DelGPMDAO;
 @WebServlet("/DelGPMServlet")
 public class DelGPMServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static Logger logger=LoggerFactory.getLogger(DelGPMServlet.class);
     /**
      * @see HttpServlet#HttpServlet()
      */
