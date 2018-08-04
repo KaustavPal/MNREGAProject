@@ -40,6 +40,27 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.2.4</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.8.0-beta2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.8.0-beta2</version>
+		</dependency>
 
 	</dependencies>
 	<build>

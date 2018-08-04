@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import bean.AddGPMBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 public class ShowGPMDAO {
 	Connection con;
 	PreparedStatement pst;
 	public Collection<AddGPMBean> getAllMembers()throws SQLException
 	{
-		con=MNREGAConnection.getConnection();
+		con=MNREGADataSource.getConnection();
 		pst = con.prepareStatement("select userid,password,name,gender,dob,address,mobileno,emailid from gpm");
 		Collection<AddGPMBean>list= new ArrayList<AddGPMBean>();
 		ResultSet rs=pst.executeQuery();

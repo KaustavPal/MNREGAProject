@@ -7,13 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Servlet implementation class BDOWorks
  */
 @WebServlet("/BDOWorks")
 public class BDOWorks extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static Logger logger=LoggerFactory.getLogger(BDOWorks.class);
     /**
      * @see HttpServlet#HttpServlet()
      */

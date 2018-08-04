@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bean.C_ProjectBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 public class C_ProjectDAO {
 	Connection con;
@@ -15,7 +15,7 @@ public class C_ProjectDAO {
 		boolean f= false;
 		try
 		{
-			 con = MNREGAConnection.getConnection();
+			 con = MNREGADataSource.getConnection();
 			PreparedStatement pst= con.prepareStatement("insert into project values(?,?,?,?,?,?)");
 			
 			

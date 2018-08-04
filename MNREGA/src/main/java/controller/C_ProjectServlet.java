@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bean.C_ProjectBean;
 import dao.C_ProjectDAO;
@@ -20,7 +22,7 @@ import dao.C_ProjectDAO;
 @WebServlet("/C_ProjectServlet")
 public class C_ProjectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static Logger logger=LoggerFactory.getLogger(C_ProjectServlet.class);
     /**
      * @see HttpServlet#HttpServlet()
      */

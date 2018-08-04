@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import bean.BDOLoginBean;
 
 import dao.BDOLoginDAO;
@@ -21,7 +24,7 @@ import dao.BDOLoginDAO;
 @WebServlet("/BDOLoginServlet")
 public class BDOLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static Logger logger=LoggerFactory.getLogger(BDOLoginServlet.class);
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -46,7 +49,6 @@ public class BDOLoginServlet extends HttpServlet {
 		//doGet(request, response);
 		
 		//BDOLoginBean user = new BDOLoginBean();
-		PrintWriter out = response.getWriter();
 		
 		String userid=request.getParameter("userid");
 		String password=request.getParameter("password");
@@ -58,6 +60,7 @@ public class BDOLoginServlet extends HttpServlet {
 	
 		
 		 if(b1){ 
+			 logger.info("Login Successful");
 		    	response.sendRedirect("BDOWork.jsp");
 		    	
 		    	

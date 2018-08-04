@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bean.AddGPMBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 
 
@@ -20,7 +20,7 @@ public class AddGPMDAO {
 		try
 		{
 			
-				con = MNREGAConnection.getConnection();
+				con = MNREGADataSource.getConnection();
 				pst = con.prepareStatement("insert into gpm values(?,?,?,?,?,?,?,?)");
 		
 				pst.setString(1, ob.getUserid());

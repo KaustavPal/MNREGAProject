@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import bean.ERegBean;
 import dao.ERegDAO;
 
@@ -20,7 +23,7 @@ import dao.ERegDAO;
 @WebServlet("/reg")
 public class ERegServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static Logger logger=LoggerFactory.getLogger(ERegServlet.class);   
     /**
      * @see HttpServlet#HttpServlet()
      */

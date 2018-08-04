@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bean.ERegBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 
 public class ERegDAO {
@@ -20,7 +20,7 @@ public class ERegDAO {
 		try
 		{
 			
-				con = MNREGAConnection.getConnection();
+				con = MNREGADataSource.getConnection();
 				pst = con.prepareStatement("insert into employee values(?,?,?,?,?,?,?)");
 		
 				pst.setString(1, ob.getUserid());

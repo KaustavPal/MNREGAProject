@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bean.BDOLoginBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 
 public class BDOLoginDAO {
@@ -18,7 +18,7 @@ public class BDOLoginDAO {
 	{
 		boolean f=false;  
 		try{ 
-		con = MNREGAConnection.getConnection();
+		con = MNREGADataSource.getConnection();
 		pst=con.prepareStatement(  
 		"select userid,password from bdo where userid=? and password=?");  
 		pst.setString(1,uid);  

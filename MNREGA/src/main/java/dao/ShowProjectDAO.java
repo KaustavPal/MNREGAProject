@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import bean.C_ProjectBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 
 
@@ -26,7 +26,7 @@ public class ShowProjectDAO {
 	
 	
 	public ShowProjectDAO() throws ClassNotFoundException, SQLException{
-		con=MNREGAConnection.getConnection();
+		con=MNREGADataSource.getConnection();
 		pstmtSelectProject=con.prepareStatement(sqlSelectProject);
 
 		

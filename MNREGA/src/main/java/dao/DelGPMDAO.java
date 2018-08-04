@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import bean.DelGPMBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 
 
@@ -19,7 +19,7 @@ public class DelGPMDAO {
 	private String sqlSelectGPM="select userid,name from gpm";
 	private PreparedStatement pstmtSelectGPM=null;
 	public DelGPMDAO() throws ClassNotFoundException, SQLException{
-		con=MNREGAConnection.getConnection();
+		con=MNREGADataSource.getConnection();
 		pstmtSelectGPM=con.prepareStatement(sqlSelectGPM);
 	}
 	

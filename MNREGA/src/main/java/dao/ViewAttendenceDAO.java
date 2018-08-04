@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import bean.AttendenceBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 public class ViewAttendenceDAO {
 	Connection con;
 	PreparedStatement pst;
 	public Collection<AttendenceBean> getAllMembers(String name)throws SQLException
 	{
-		con=MNREGAConnection.getConnection();
+		con=MNREGADataSource.getConnection();
 		pst = con.prepareStatement("select userid, count(*) from attendence where userid=?");
 		pst.setString(1,name);
 		Collection<AttendenceBean>list= new ArrayList<AttendenceBean>();

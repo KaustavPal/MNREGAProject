@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bean.AddGPMBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 public class GPMLoginDAO {
 
@@ -18,7 +18,7 @@ public class GPMLoginDAO {
 	{
 		//boolean f=false;  
 
-		con = MNREGAConnection.getConnection();
+		con = MNREGADataSource.getConnection();
 		pst=con.prepareStatement(  
 		"select userid,password,name from gpm where userid=? and password=?");  
 		pst.setString(1,uid);  

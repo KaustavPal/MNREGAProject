@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import bean.AddGPMBean;
-import util.MNREGAConnection;
+import util.MNREGADataSource;
 
 
 
@@ -18,7 +18,7 @@ public class SearchGPMDAO {
 	PreparedStatement pst;
 	public Collection<AddGPMBean> getAllMembers(String name)throws SQLException
 	{
-		con=MNREGAConnection.getConnection();
+		con=MNREGADataSource.getConnection();
 		pst = con.prepareStatement("select userid,password,name,gender,dob,address,mobileno,emailid from gpm where name=?");
 		pst.setString(1,name);
 		Collection<AddGPMBean>list= new ArrayList<AddGPMBean>();
